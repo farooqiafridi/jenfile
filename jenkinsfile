@@ -1,0 +1,30 @@
+  pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    
+        stage('build') {
+            steps {
+                script{ 
+                    bat 'echo %CD%'
+                }
+                 echo 'Held'
+                 bat 'dir'
+                 
+                 bat 'mkdir jenkins'
+                 
+            }
+        }
+    
+        stage('test') {
+            steps {
+                bat 'echo %CD%'
+            }
+        }
+    }    
+}
